@@ -1,0 +1,160 @@
+@use 'fonts';
+@use 'bootstrap';
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: "Creato Display", sans-serif;
+}
+
+* {box-sizing: border-box;}
+
+#main-header {
+    width: 100%;
+    min-height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    background-size: cover;
+    background: #111 url('/resources/img/header-bg.jpg') center;
+}
+
+#main-header img {
+    margin: 10px;
+    max-height: 150px;
+    max-width: calc(100vw - 40px);
+}
+
+#socials-bar {
+    width: 100%;
+    padding: 1rem 0;
+    background: #272727;
+    box-shadow: inset 0 0 50px 15px rgb(16 16 16 / 0.9);
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#socials-bar a {
+    display: block;
+    width: 300px;
+    padding: 10px 20px;
+    border-radius: 14px;
+    font-family: "Coolvetica", sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #fff;
+    border: solid 3px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.4);
+
+    transition: 0.1s;
+}
+
+#socials-bar a:hover {
+    transform: scale(1.1);
+}
+
+#socials-bar .discord {
+    background: #7289DA;
+    border-color: #2b3451;
+}
+#socials-bar .discord:hover { background: #53649f; }
+
+#socials-bar .gallery {
+    background: linear-gradient(
+        -45deg,
+        rgba(63, 218, 216, 1) 0%,
+        rgba(47, 201, 226, 1) 16%,
+        rgba(28, 127, 238, 1) 32%,
+        rgba(95, 21, 242, 1) 48%,
+        rgba(186, 12, 248, 1) 64%,
+        rgba(251, 7, 217, 1) 80%,
+        rgba(255, 0, 0, 1) 100%
+    );
+    border-color: #532a6a;
+}
+#socials-bar .gallery:hover { }
+
+#socials-bar .instagram {
+    background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    border-color: #C13584;
+}
+
+#socials-bar .twitter {
+    background: #55ACEE;
+    border-color: #292F33;
+}
+#socials-bar .twitter:hover { background: #376e98; }
+
+#socials-bar .tiktok {
+    background: #0e0e0e;
+    border-top-color: #69c9d0;
+    border-left-color: #69c9d0;
+    border-right-color: #ee1d52;
+    border-bottom-color: #ee1d52;
+}
+#socials-bar .tiktok:hover { background: #202020; }
+
+#socials-bar hr {
+    width: 250px;
+    border: solid 1px rgba(255, 255, 255, 0.75);
+}
+
+footer#main-footer {
+    text-align: center;
+    opacity: 0.8;
+    font-size: 0.8rem;
+
+    p {
+        margin: 5px;
+    }
+}
+
+.file-upload {
+    width: 26rem;
+    padding: 20px;
+    background: #ececec;
+    border: solid 1px #cacaca;
+    border-radius: 10px;
+    text-align: center;
+    color: #2c2c2c;
+    transition: 0.1s background;
+
+    i {
+        margin-bottom: 1rem;
+        font-size: 50px;
+        color: #454545;
+    }
+
+    .files {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1rem;
+
+        img {
+            background: #111;
+            width: 64px;
+            height: 64px;
+            object-fit: contain;
+        }
+
+        span {
+            margin-left: 1rem;
+            color: #2c2c2c;
+        }
+    }
+}
+
+.file-upload.dragover {
+    background: #c7e3ea;
+}
+
+
+

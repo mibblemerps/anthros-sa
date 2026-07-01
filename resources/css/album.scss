@@ -1,0 +1,73 @@
+header.album-header {
+    margin-top: 1rem;
+    text-align: center;
+
+    h1 {
+        font-size: 2.5rem;
+        font-family: "Coolvetica", sans-serif;
+    }
+
+    p {
+        font-size: 1.25rem;
+        color: #2c2c2c;
+    }
+}
+
+.photos {
+    margin: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    column-count: 3;
+    column-gap: 16px;
+
+    @media (min-width: 800px) {
+        column-count: 4;
+    }
+
+    @media (min-width: 1000px) {
+        column-count: 5;
+    }
+
+    @media (min-width: 1200px) {
+        column-count: 6;
+    }
+
+    .photo {
+        padding: 5px;
+        margin-bottom: 16px;
+        background: #ececec;
+        border: solid 1px #cacaca;
+        border-radius: 10px;
+        break-inside: avoid;
+
+        transition: 0.2s transform;
+
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        footer {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .photo-description {
+            flex-grow: 1;
+            color: #2c2c2c;
+
+            p { margin: 0; padding: 0;}
+        }
+
+        .photo-credit {
+            font-size: 0.8em;
+            text-align: right;
+            color: #5c6061;
+        }
+    }
+
+    .photo:hover {
+        transform: scale(1.1);
+        z-index: 10;
+    }
+}

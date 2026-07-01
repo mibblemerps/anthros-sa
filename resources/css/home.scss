@@ -1,0 +1,117 @@
+
+#title {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+
+    font-family: "Gagalin", sans-serif;
+    font-size: 150px;
+    text-align: center;
+
+    color: #fff;
+    text-shadow: -10px -5px rgba(0, 0, 0, 0.8);
+}
+
+#sub-header {
+    width: 100%;
+    font-size: 32px;
+    text-align: center;
+    font-weight: 200;
+    color: #111;
+}
+
+#sub-header p {
+    margin: 2rem;
+}
+
+#stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+
+    .stat {
+        text-align: center;
+        color: #252525;
+
+        .stat-value {
+            font-size: 3rem;
+            font-weight: bold;
+            text-shadow: 3px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        p {
+            margin-top: 10px;
+            font-style: italic;
+        }
+    }
+}
+
+.meets {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.meet {
+    background: #efefef;
+    border: solid 2px #dadada;
+    border-left: none;
+    border-right: none;
+
+    .meet-header {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: end;
+        padding: 0 2rem;
+
+        h2 {
+            margin: 1rem 0 0 0;
+            font-weight: bold;
+            font-size: 1.66rem;
+
+            a {
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+
+        .date {
+            font-size: 1.2rem;
+            color: #303030;
+        }
+    }
+
+    .description {
+        margin: 0.5rem 0 0 2rem;
+    }
+
+    .meet-slideshow {
+        .embla__viewport {
+            overflow: hidden;
+        }
+
+        .embla__container {
+            display: flex;
+            height: 220px;
+            touch-action: pan-y pinch-zoom;
+            margin: 20px;
+        }
+
+        .embla__slide {
+            flex: 0 0 auto;
+            min-width: 0;
+            height: 220px;
+        }
+
+        .embla__slide img {
+            height: 220px;
+            margin-right: 10px;
+            width: auto;
+            display: block;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    }
+}
