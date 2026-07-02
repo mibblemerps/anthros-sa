@@ -76,7 +76,7 @@
                     <a href="{{ url('/photo/' . $photo->id . '/download') }}" class="btn btn-secondary"><i class="fa fa-download"></i> Download</a>
                     @if ($photo->canUserModify(auth()->user()))
                         <a class="btn btn-primary" href="{{ url('/photo/' . $photo->id . '?edit=1') }}"><i class="fa fa-pencil"></i> Edit</a>
-                        <form action="{{ url('/photo/' . $photo->id . '/delete') }}" method="post">
+                        <form action="{{ url('/photo/' . $photo->id . '/delete') }}" method="post" data-submit-confirmation="Are you sure you want to delete this photo?">
                             <button class="btn btn-danger"><i class="fa fa-trash"></i> Delete</button>
                         </form>
                     @endif

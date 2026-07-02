@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     @vite('resources/css/app.scss')
+    @vite('resources/js/app.js')
 
     @yield('head')
 </head>
@@ -29,6 +30,12 @@
     <p>Site made with &hearts; by Mibble | Banner photo by Donut</p>
     @if (auth()->user() !== null)
         <p>Logged in as <b>{{ auth()->user()->name }}</b>. <a href="/logout">Logout</a></p>
+
+        @if (auth()->user()->is_admin)
+            <p>
+                <a href="/album/create">Create Album</a>
+            </p>
+        @endif
     @endif
 
 </footer>

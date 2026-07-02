@@ -16,4 +16,41 @@ class AlbumController extends Controller
     {
         return view('album.view', ['album' => $album]);
     }
+
+    public function edit(\Illuminate\Http\Request $request, Album $album)
+    {
+        if ($request->isMethod('GET')) {
+            return view('album.edit', ['album' => $album]);
+        }
+
+        $album = Album::find($request->input('album'));
+        $album->title = $request->input('title');
+        $album->event_date = $request->input('date');
+        $album->description = $request->input('description');
+        $album->save();
+
+        return redirect('/album/' . $album->id);
+    }
+
+    public function create(\Illuminate\Http\Request $request)
+    {
+        if ($request->isMethod('GET')) {
+            return view('album.edit');
+        }
+
+        $album = new Album();
+        $album->title = $request->input('title');
+        $album->event_date = $request->input('date');
+        $album->description = $request->input('description');
+        $album->save();
+
+        return redirect('/album/' . $album->id);
+    }
+
+    public function delete(Album $album)
+    {
+        $album->delete();
+
+        return redirect('/');
+    }
 }

@@ -10,6 +10,9 @@ Route::get('/', function () {
     return view('home.home');
 });
 
+Route::any('/album/create', [AlbumController::class, 'create']);
+Route::any('/album/{album}/edit', [AlbumController::class, 'edit']);
+Route::post('/album/{album}/delete', [AlbumController::class, 'delete']);
 Route::get('/album/{album}', [AlbumController::class, 'view']);
 Route::get('/album', [AlbumController::class, 'index']);
 

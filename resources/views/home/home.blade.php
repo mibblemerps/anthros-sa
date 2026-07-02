@@ -33,7 +33,7 @@
                 <div class="meet-header">
                     <h2><a href="{{ url('/album/' . $album->id) }}">{{ $album->title }}</a></h2>
                     @if ($album->event_date !== null)
-                        <span class="date">{{ $album->event_date->toDateString() }}</span>
+                        <span class="date">{{ $album->event_date->format('d/m/Y') }}</span>
                     @endif
                     <div style="flex-grow: 1"></div>
                     <a href="{{ url('/album/' . $album->id) }}" class="btn btn-primary"><i class="fa fa-images"></i> View Gallery</a>
