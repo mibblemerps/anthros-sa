@@ -28,7 +28,13 @@
     </div>
 
     <div class="meets">
-        @foreach (\App\Models\Album::all() as $album)
+        @foreach (\App\Models\Album::orderByDesc('event_date')->get() as $album)
+            @php
+                // skip empty albums
+                if (count($album->photos) === 0 && (auth()->user() === null || !auth()->user()->is_admin)) continue;
+            @endphp
+
+
             <div class="meet">
                 <div class="meet-header">
                     <h2><a href="{{ url('/album/' . $album->id) }}">{{ $album->title }}</a></h2>
