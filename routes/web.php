@@ -16,6 +16,7 @@ Route::get('/album', [AlbumController::class, 'index']);
 Route::get('/photo/{photo}/download', [PhotoController::class, 'download']);
 Route::post('/photo/{photo}/delete', [PhotoController::class, 'delete']);
 Route::get('/photo/{photo}', [PhotoController::class, 'view']);
+Route::post('/photo/{photo}', [PhotoController::class, 'edit']);
 
 Route::get('/upload', [UploadController::class, 'uploader'])->name('uploader');
 Route::post('/upload', [UploadController::class, 'upload']);
