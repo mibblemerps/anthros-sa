@@ -8,6 +8,7 @@
     <header class="album-header">
         <h1>{{ $album->title }}</h1>
         <h2>{{ $album->event_date->format('d/m/Y') }}</h2>
+        <p>{{ $album->description }}</p>
         @if (auth()->user()->is_admin)
             <div class="d-flex justify-content-center gap-1">
                 <a href="{{ url('/album/' . $album->id . '/edit') }}" class="btn btn-sm btn-primary album-edit-btn"><i class="fa fa-edit"></i> Edit</a>
@@ -16,7 +17,6 @@
                 </form>
             </div>
         @endif
-        <p>{{ $album->description }}</p>
     </header>
     <div class="photos">
         @foreach ($album->photos as $photo)
