@@ -5,16 +5,18 @@ import tailwindcss from '@tailwindcss/vite';
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Read all scss files from the target directory
-const scssDir = 'resources/css';
-const scssFiles = fs.readdirSync(scssDir)
+const scssFiles = fs.readdirSync('resources/css')
     .filter(file => file.endsWith('.scss'))
-    .map(file => path.join(scssDir, file).replace(/\\/g, '/'));
+    .map(file => path.join('resources/css', file).replace(/\\/g, '/'));
+
+const imgFiles = fs.readdirSync('resources/img')
+    .filter(file => file.endsWith('.png') || file.endsWith('.jpg'))
+    .map(file => path.join('resources/img', file).replace(/\\/g, '/'));
 
 export default defineConfig({
     plugins: [
         laravel({
-            input: [...scssFiles, 'resources/js/app.js', 'resources/js/home.js', 'resources/js/upload.js'],
+            input: [...scssFiles, ...imgFiles, 'resources/js/app.js', 'resources/js/home.js', 'resources/js/upload.js'],
             refresh: true,
             fonts: [
                 bunny('Instrument Sans', {
