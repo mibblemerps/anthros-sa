@@ -12,20 +12,17 @@
         </p>
     </div>
 
-    <div id="stats">
-        <div class="stat">
-            <span class="stat-value">420</span>
-            <p>members</p>
+    @php
+    $stats = \App\Statistics::get();
+    @endphp
+    @if ($stats)
+        <div id="stats">
+            <div class="stat">
+                <span class="stat-value">{{ $stats->memberCount }}</span>
+                <p>members and counting!</p>
+            </div>
         </div>
-        <div class="stat">
-            <span class="stat-value">67</span>
-            <p>meets to date</p>
-        </div>
-        <div class="stat">
-            <span class="stat-value">{{ \App\Models\Photo::count() }}</span>
-            <p>meet photos</p>
-        </div>
-    </div>
+    @endif
 
     <div class="meets">
         @foreach (\App\Models\Album::orderByDesc('event_date')->get() as $album)
