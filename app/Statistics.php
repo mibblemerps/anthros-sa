@@ -21,9 +21,9 @@ class Statistics
         if ($data === null) return null;
 
         $statistics = new Statistics();
-        $statistics->memberCount = $data['memberCount'];
-        //$statistics->meetsToDate = $data['meetsToDate'];
-        $statistics->meetPhotos = $data['meetPhotos'];
+        $statistics->memberCount = $data['memberCount'] ?? 0;
+        //$statistics->meetsToDate = $data['meetsToDate'] ?? 0;
+        $statistics->meetPhotos = $data['meetPhotos'] ?? 0;
         return $statistics;
     }
 
