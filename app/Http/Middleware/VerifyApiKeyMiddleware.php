@@ -27,8 +27,6 @@ class VerifyApiKeyMiddleware
             $authorization = Str::substr($authorization, Str::length('bearer '));
         }
 
-        Log::debug($authorization);
-
         if (Str::trim($authorization) !== config('app.api_key')) {
             return response('Invalid API key', Response::HTTP_UNAUTHORIZED)->header('Content-Type', 'text/plain');
         }

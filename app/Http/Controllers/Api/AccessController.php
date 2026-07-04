@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class AccessController extends Controller
@@ -12,6 +13,8 @@ class AccessController extends Controller
     public function access(Request $request)
     {
         $body = json_decode($request->getContent(), true);
+
+        Log::info("Generating access link for {$body['name']} ({$body['id']})..." );
 
         $user = User::where('discord_id', $body['id'])->first();
         if ($user === null) {
