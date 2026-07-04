@@ -52,7 +52,7 @@
         </div>
 
         <select class="form-select" name="album">
-            @foreach (\App\Models\Album::all() as $album)
+            @foreach (\App\Models\Album::orderByDesc('event_date')->get() as $album)
                 <option value="{{ $album->id }}">{{ $album->title }}</option>
             @endforeach
         </select>
