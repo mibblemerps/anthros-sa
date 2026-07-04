@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Album;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class AlbumController extends Controller
 {
@@ -34,6 +35,10 @@ class AlbumController extends Controller
 
     public function create(\Illuminate\Http\Request $request)
     {
+        if (!$request->user()->is_admin) {
+            throw new HttpException(403, 'Forbidden');
+        }
+
         if ($request->isMethod('GET')) {
             return view('album.edit');
         }

@@ -33,7 +33,9 @@
             </div>
             <div class="buttons">
                 <a href="/upload" class="btn btn-primary"><i class="fa fa-cloud-upload"></i> Upload</a>
-                <a href="/album/create" class="btn btn-primary"><i class="fa fa-plus"></i> Create Album</a>
+                @if (auth()->user()->is_admin)
+                    <a href="/album/create" class="btn btn-primary"><i class="fa fa-plus"></i> Create Album</a>
+                @endif
             </div>
         </div>
     @endif
