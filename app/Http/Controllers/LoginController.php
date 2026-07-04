@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
 
 class LoginController extends Controller
@@ -38,6 +39,8 @@ class LoginController extends Controller
         // Login user
         Auth::login($user);
         Session::regenerate();
+
+        Log::info("User {$user->name} logged in via OTP link.");
 
         return redirect()->route($to);
     }
