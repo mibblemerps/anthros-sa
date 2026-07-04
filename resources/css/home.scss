@@ -45,6 +45,33 @@
     }
 }
 
+#admin-controls {
+    margin: 0 auto;
+    width: 500px;
+
+    .user {
+        margin-bottom: 16px;
+        text-align: center;
+
+        .label {
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        img {
+            height: 32px;
+            border-radius: 50%;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
+        justify-content: center;
+    }
+}
+
 .meets {
     display: flex;
     flex-direction: column;

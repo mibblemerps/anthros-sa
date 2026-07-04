@@ -30,12 +30,6 @@
     <p>Site made with &hearts; by Mibble | Banner photo by Donut</p>
     @if (auth()->user() !== null)
         <p>Logged in as <b>{{ auth()->user()->name }}</b>. <a href="/logout">Logout</a></p>
-
-        @if (auth()->user()->is_admin)
-            <p>
-                <a href="/album/create">Create Album</a>
-            </p>
-        @endif
     @endif
 
 </footer>

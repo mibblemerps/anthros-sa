@@ -24,6 +24,20 @@
         </div>
     @endif
 
+    @if (auth()->user() !== null)
+        <div id="admin-controls" class="card card-body">
+            <div class="user">
+                <img class="avatar" src="{{ auth()->user()->avatar }}" alt="Avatar">
+                <span class="username">{{ auth()->user()->name }}</span>
+                <a href="/logout" class="btn btn-link text-danger">Logout</a>
+            </div>
+            <div class="buttons">
+                <a href="/upload" class="btn btn-primary"><i class="fa fa-cloud-upload"></i> Upload</a>
+                <a href="/album/create" class="btn btn-primary"><i class="fa fa-plus"></i> Create Album</a>
+            </div>
+        </div>
+    @endif
+
     <div class="meets">
         @foreach (\App\Models\Album::orderByDesc('event_date')->get() as $album)
             @php
