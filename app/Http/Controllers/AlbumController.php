@@ -24,6 +24,8 @@ class AlbumController extends Controller
             return view('album.edit', ['album' => $album]);
         }
 
+        $this->validate($request);
+
         $album = Album::find($request->input('album'));
         $album->title = $request->input('title');
         $album->event_date = $request->input('date');
@@ -43,6 +45,8 @@ class AlbumController extends Controller
             return view('album.edit');
         }
 
+        $this->validate($request);
+
         $album = new Album();
         $album->title = $request->input('title');
         $album->event_date = $request->input('date');
@@ -57,5 +61,14 @@ class AlbumController extends Controller
         $album->delete();
 
         return redirect('/');
+    }
+
+    private function validate(\Illuminate\Http\Request $request)
+    {
+        $request->validate([
+            'title' => ['required', 'string', 'max:255', 'min:3', 'unique:albums'],
+            'date' => ['required', 'date'],
+            'description' => ['max:2048'],
+        ]);
     }
 }

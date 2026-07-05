@@ -6,6 +6,16 @@
 
 @section('body')
     <form class="mt-4" style="width: 500px; margin: 0 auto" method="post">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
         @if (isset($album))
             <h1 class="text-center">Edit Album</h1>
             <input type="hidden" name="album" value="{{ $album->id }}">
@@ -23,7 +33,7 @@
         </div>
         <div class="mb-2">
             <label for="album-description" class="form-label">Description</label>
-            <textarea class="form-control" id="album-description" name="description" required>{{ isset($album) ? $album->description : '' }}</textarea>
+            <textarea class="form-control" id="album-description" name="description">{{ isset($album) ? $album->description : '' }}</textarea>
         </div>
         <div class="text-end">
             <button class="btn btn-primary">{{ isset($album) ? 'Save' : 'Create' }}</button>

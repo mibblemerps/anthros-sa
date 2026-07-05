@@ -10,6 +10,17 @@
     @if ($edit)
         <form action="" method="post">
             <input type="hidden" name="photo" value="{{ $photo->id }}">
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
     @endif
 
     <div class="view-photo">
