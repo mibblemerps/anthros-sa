@@ -71,11 +71,12 @@
         </div>
 
         <div class="consent card card-body">
-            <h2>Consent</h2>
+            <h3>Consent</h3>
             <p>
                 By uploading your photo here it is assumed you consent to Anthros SA hosting it on this gallery with
                 credit to yourself.
             </p>
+            <!--
             <p>
                 <b>Optionally</b>, you may give consent for your photo to be used for other Anthros SA related purposes
                 such as marketing, social media, or other community purposes.
@@ -92,6 +93,7 @@
                         No</span> &mdash; ASSA must seek explicit permission before using this photo.
                 </label>
             </div>
+            -->
         </div>
 
         <button class="btn btn-primary btn-lg"><i class="fa fa-cloud-arrow-up"></i> Upload</button>
