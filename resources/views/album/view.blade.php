@@ -1,6 +1,8 @@
 @extends('_template')
 
 @section('head')
+    <title>{{ $album->title }} - Anthros SA</title>
+
     @vite('resources/css/album.scss')
 @endsection
 

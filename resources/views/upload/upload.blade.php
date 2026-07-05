@@ -1,6 +1,8 @@
 @extends('_template')
 
 @section('head')
+    <title>Upload - Anthros SA</title>
+
     @vite('resources/css/upload.scss')
     @vite('resources/js/upload.js')
 @endsection

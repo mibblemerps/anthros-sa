@@ -1,7 +1,7 @@
 @extends('_template')
 
 @section('head')
-
+    <title>Edit Album - Anthros SA</title>
 @endsection
 
 @section('body')

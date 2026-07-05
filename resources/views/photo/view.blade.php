@@ -1,6 +1,8 @@
 @extends('_template')
 
 @section('head')
+    <title>Photo - Anthros SA</title>
+
     @vite('resources/css/photo.scss')
 @endsection
 

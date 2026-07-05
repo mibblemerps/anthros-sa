@@ -1,6 +1,8 @@
 @extends('_template')
 
 @section('head')
+    <title>Not logged in - Anthros SA</title>
+
     <style>
         article {
             text-align: center;

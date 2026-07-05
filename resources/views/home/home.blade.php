@@ -1,6 +1,8 @@
 @extends('_template')
 
 @section('head')
+    <title>Anthros SA</title>
+
     @vite('resources/css/home.scss')
     @vite('resources/js/home.js')
 @endsection
