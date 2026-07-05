@@ -9,7 +9,7 @@ function setupCarousel(el) {
     const emblaApi = EmblaCarousel(viewportNode, { loop: true }, [AutoScroll({
         startDelay: 0,
         speed: 0.5 * (reverse ? 1 : -1),
-        stopOnMouseEnter: true,
+        stopOnMouseEnter: false,
         stopOnInteraction: false,
     })]);
 
