@@ -63,7 +63,7 @@
                 <a href="#">Click to upload</a> or drag and drop
             </p>
             <p>
-                PNG or JPG (max 10MiB)
+                PNG or JPG (max 100MiB)
             </p>
             <div class="files"></div>
         </div>
