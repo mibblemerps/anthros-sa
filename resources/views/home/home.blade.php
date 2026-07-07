@@ -63,7 +63,7 @@
                     <p class="description">{{ $album->description }}</p>
                 @endif
                 <div class="meet-slideshow">
-                    @include('home._slides', ['photos' => $album->photos])
+                    @include('home._slides', ['photos' => $album->photos->shuffle()->slice(0, 30)])
                 </div>
             </div>
         @endforeach
